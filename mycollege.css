@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58011') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58010') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58007') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58006') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58013') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58012') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AkzidenzGrotesk';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58009') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58008') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GTSectraFineBold';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58015') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58014') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NoeDisplayBold';
+    src: url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58017') format('woff2'),
+        url('https://schoolbox-testserver.stcuthberts.school.nz/send.php?id=58016') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@import "_variables.less";
+@import "../../../../../node_modules/neighbourly-design-system/src/less/_mixins.less";
+
+*{
+    box-sizing: border-box;
+
+    &:before,
+    &:after{
+        box-sizing: border-box;
+    }
+}
+
+html{
+    font-size: @font-size;
+
+    body{
+        background: @body-background;
+        color: @body-text-color;
+        font-family: @body-font-face;
+        font-size: @body-font-size;
+        line-height: @body-line-height;
+        font-weight: @body-font-weight;
+
+        //Typography
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/typography/anchors/styles.less";
+        @import "typography/blockquote/styles.less";
+        @import "typography/copy/styles.less";
+        @import "typography/headings/styles.less";
+
+        //Elements
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/badge/styles.less";
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/buttons/styles.less";
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/horizontal-rule/styles.less";
+        @import "elements/image/styles.less";
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/inputs/styles.less";
+        @import "elements/lists/styles.less";
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/lozenge/styles.less";
+        @import "../../../../../node_modules/neighbourly-design-system/src/less/elements/tables/styles.less";
+
+        @import "mycollege/sidebar/styles.less";
+
+        p, ul, ol, dl{
+            font-size: @body-font-size;
+            line-height: @body-line-height;
+            font-weight: @body-font-weight;
+        }
+
+        .tab-bar{
+            background: @brand-tertiary;
+        }
+
+        .right-small{
+
+            a{
+                background: @brand-tertiary;
+            }
+        }
+
+        .right-off-canvas-menu{
+
+            &[data-unread="0"]{
+
+                ul{
+
+                    &.off-canvas-list{
+
+                        label{
+                            background: @brand-tertiary;
+                            color: @white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-section{
+
+            @media (min-width: @breakpoint-lg){
+                min-height: 100vh;
+                border-left: solid @border-width-base @gray-light;
+            }
+        }
+    }
+}
